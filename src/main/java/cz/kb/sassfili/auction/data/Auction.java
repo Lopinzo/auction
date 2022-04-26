@@ -1,5 +1,6 @@
 package cz.kb.sassfili.auction.data;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +10,7 @@ public class Auction {
         return bids;
     }
 
-    private List<Bid> bids;
+    private final List<Bid> bids;
     final int nominalValue;
     int currentValue;
     final int bidValue;
@@ -22,6 +23,7 @@ public class Auction {
         this.nominalValue = nominalValue;
         this.currentValue = nominalValue;
         this.bidValue = bidValue;
+        this.bids = new ArrayList<>();
     }
 
     /**
