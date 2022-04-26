@@ -5,7 +5,11 @@ import java.util.Optional;
 
 public class Auction {
 
-    List<Bid> bids;
+    public List<Bid> getBids() {
+        return bids;
+    }
+
+    private List<Bid> bids;
     final int nominalValue;
     int currentValue;
     final int bidValue;
