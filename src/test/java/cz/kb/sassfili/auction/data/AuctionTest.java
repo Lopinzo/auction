@@ -11,6 +11,9 @@ class AuctionTest {
 
     @Test
     void auction() {
+        Auction testAuction = new Auction(TEST_NOMINAL_VALUE, TEST_BID_VALUE);
+        assert(testAuction.nominalValue == TEST_NOMINAL_VALUE);
+        assert(testAuction.bidValue == TEST_BID_VALUE);
     }
 
     @Test
