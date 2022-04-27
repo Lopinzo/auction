@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AuctionTest {
 
+    final int TEST_NOMINAL_VALUE = 100;
+    final int TEST_BID_VALUE = 10;
 
     @Test
     void auction() {
