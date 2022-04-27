@@ -22,6 +22,7 @@ class AuctionTest {
 
     @Test
     void getWinningBid() {
+
     }
 
     @Test
@@ -32,6 +33,24 @@ class AuctionTest {
 
         for(int i = 1; i <= 10; i++){
             testAuction.add(testBid1);
+            assert(testAuction.getCurrentValue() == TEST_NOMINAL_VALUE + i * TEST_BID_VALUE);
+        }
+
+        testAuction = new Auction(TEST_NOMINAL_VALUE, TEST_BID_VALUE);
+
+        for(int i = 1; i <= 10; i++){
+            testAuction.add(testBid2);
+            assert(testAuction.getCurrentValue() == TEST_NOMINAL_VALUE + i * TEST_BID_VALUE);
+        }
+
+        testAuction = new Auction(TEST_NOMINAL_VALUE, TEST_BID_VALUE);
+
+
+        for(int i = 1; i <= 10; i++){
+            if(i % 2 == 0)
+                testAuction.add(testBid1);
+            else
+                testAuction.add(testBid2);
             assert(testAuction.getCurrentValue() == TEST_NOMINAL_VALUE + i * TEST_BID_VALUE);
         }
     }
