@@ -26,5 +26,13 @@ class AuctionTest {
 
     @Test
     void getCurrentValue() {
+        Auction testAuction = new Auction(TEST_NOMINAL_VALUE, TEST_BID_VALUE);
+        Bid testBid1 = new Bid(new Person("testPerson1"));
+        Bid testBid2 = new Bid(new Person("testPerson1"));
+
+        for(int i = 1; i <= 10; i++){
+            testAuction.add(testBid1);
+            assert(testAuction.getCurrentValue() == TEST_NOMINAL_VALUE + i * TEST_BID_VALUE);
+        }
     }
 }
