@@ -39,7 +39,17 @@ class AuctionTest {
 
     @Test
     void getWinningBid() {
+        Auction testAuction = new Auction(TEST_NOMINAL_VALUE, TEST_BID_VALUE);
+        Bid testBid1 = new Bid(new Person("testPerson1"));
+        Bid testBid2 = new Bid(new Person("testPerson1"));
 
+        assert(testAuction.getWinningBid().isEmpty());
+        testAuction.add(testBid1);
+        assert(testAuction.getWinningBid().isPresent() && testAuction.getWinningBid().get().equals(testBid1));
+        testAuction.add(testBid2);
+        assert(testAuction.getWinningBid().isPresent() && testAuction.getWinningBid().get().equals(testBid2));
+        testAuction.add(testBid2);
+        assert(testAuction.getWinningBid().isPresent() && testAuction.getWinningBid().get().equals(testBid2));
     }
 
     @Test
