@@ -18,6 +18,23 @@ class AuctionTest {
 
     @Test
     void isWinning() {
+        Auction testAuction = new Auction(TEST_NOMINAL_VALUE, TEST_BID_VALUE);
+        Person testPerson1 = new Person("testPerson1");
+        Person testPerson2 = new Person("testPerson2");
+        Bid testBid1 = new Bid(testPerson1);
+        Bid testBid2 = new Bid(testPerson2);
+
+        assert(!testAuction.isWinning(testPerson1));
+        assert(!testAuction.isWinning(testPerson2));
+        testAuction.add(testBid1);
+        assert(testAuction.isWinning(testPerson1));
+        assert(!testAuction.isWinning(testPerson2));
+        testAuction.add(testBid2);
+        assert(!testAuction.isWinning(testPerson1));
+        assert(testAuction.isWinning(testPerson2));
+        testAuction.add(testBid2);
+        assert(!testAuction.isWinning(testPerson1));
+        assert(testAuction.isWinning(testPerson2));
     }
 
     @Test
