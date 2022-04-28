@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Auction</title>
+    <style>
+        h3 {text-align: center;
+            text-decoration: underline;
+        }
+        p {text-align: center;}
+        div {text-align: center;}
+        body {border-style: solid;}
+        span {font-weight: bold;}
+    </style>
+</head>
+<body>
+<h3>Aukce</h3>
+<p> Uzivatel <input> </p>
+<p> Aktualni cena: <span th:text="${currentValue}">0</span>  </p>
+<p> Vedu: <span th:text="${amIWinning}">Ne</span> </p>
+<p> <button> Prihodit </button></p>
+</body>
+</html>
