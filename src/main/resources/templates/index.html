@@ -9,15 +9,22 @@
         }
         p {text-align: center;}
         div {text-align: center;}
-        body {border-style: solid;}
+        form {border-style: solid;}
         span {font-weight: bold;}
     </style>
 </head>
 <body>
-<h3>Aukce</h3>
-<p> Uživatel <input> </p>
-<p> Aktualní cena: <span th:text="${currentValue}">0</span>  </p>
-<p> Vedu: <span th:text="${amIWinning}">Ne</span> </p>
-<p> <button> Přihodit </button></p>
+<form action="" method="post">
+    <h3>Aukce</h3>
+    <div>
+        <label for="nameInput"> Uživatel  </label>
+        <input name="nameInput" id="nameInput" th:value="${userName}">
+    </div>
+    <p> Aktualní cena: <span th:text="${currentValue}">0</span>  </p>
+    <p> Vedu: <span th:text="${amIWinning}">Ne</span> </p>
+    <div>
+        <button> Přihodit </button>
+    </div>
+</form>
 </body>
 </html>
