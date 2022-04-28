@@ -1,9 +1,12 @@
 package cz.kb.sassfili.auction.data;
 
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class Auction {
 
     public List<Bid> getBids() {
@@ -23,6 +26,18 @@ public class Auction {
         this.nominalValue = nominalValue;
         this.currentValue = nominalValue;
         this.bidValue = bidValue;
+        this.bids = new ArrayList<>();
+    }
+
+    /**
+     * implicit constructor of Auction
+     * nominal value is set to 100
+     * bid value is set to 10
+      */
+    public Auction() {
+        this.nominalValue = 100;
+        this.currentValue = nominalValue;
+        this.bidValue = 10;
         this.bids = new ArrayList<>();
     }
 
