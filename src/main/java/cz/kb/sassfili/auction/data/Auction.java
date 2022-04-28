@@ -44,7 +44,7 @@ public class Auction {
     /**
      * @param bid adds this bid to auction
      */
-    void add(Bid bid) {
+    public void add(Bid bid) {
         bids.add(bid);
         currentValue += bidValue;
     }
@@ -53,14 +53,14 @@ public class Auction {
      * @param person will be compared to last bidder
      * @return true if last bidder is person, else false
      */
-    boolean isWinning(Person person){
+    public boolean isWinning(Person person){
         return !bids.isEmpty() && bids.get(bids.size() - 1).person.equals(person);
     }
 
     /**
      * @return optional of bidder who is winning auction or Optional.empty() if auction has no bidders yet
      */
-    Optional<Bid> getWinningBid(){
+    public Optional<Bid> getWinningBid(){
         return bids.isEmpty() ?
                 Optional.empty() :
                 Optional.of(bids.get(bids.size() - 1));
